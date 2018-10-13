@@ -1,0 +1,22 @@
+<nb-auth-block>
+  <div>
+    <h2 class="title">Sign Up</h2>
+
+
+    <ngx-form
+      [myform]="form"
+      [formObj]="formObj"
+      [change]="onChange.bind(this)"
+      [submitted]="submitted"
+      [submit]="onSubmit.bind(this)"
+      [submitText]="title"
+    >
+    </ngx-form>
+    <div class="links">
+      <small class="form-text">
+        Already have an account? <a routerLink="../signin"><strong>Sign in</strong></a>
+      </small>
+    </div>
+  </div>
+</nb-auth-block>
+

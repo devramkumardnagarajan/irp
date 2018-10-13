@@ -1,0 +1,16 @@
+<div [formGroup]="myform">
+  <select id="{{elem.id}}"
+         formControlName="{{elem.id}}"
+         class="{{elem.class}}"
+         [ngClass]="{ 'is-invalid form-control-danger': f[elem.id].touched && f[elem.id].errors }"
+  >
+    <option value="">{{elem.placeHolder}}</option>
+    <option  *ngFor="let row of elem.list" value={{row.id}}>
+      {{row.name}}
+    </option>
+  </select>
+  <small class="form-text error" *ngIf="f[elem.id].touched && f[elem.id].errors" >
+    <small *ngIf="f[elem.id].errors.required">{{elem.placeHolder}} is required</small>
+    <small *ngIf="elem.id == 'email' && f[elem.id].errors?.pattern">Enter valid{{elem.placeHolder}}</small>
+  </small>
+</div>

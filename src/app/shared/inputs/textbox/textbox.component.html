@@ -1,0 +1,13 @@
+<div [formGroup]="myform">
+<input id="{{elem.id}}"
+       type= "{{ elem.type != undefined ? elem.type : 'text'}}"
+       formControlName="{{elem.id}}"
+       class="{{elem.class}}"
+       placeholder="{{elem.placeHolder}}"
+       [ngClass]="{ 'is-invalid form-control-danger': f[elem.id].touched && f[elem.id].errors }"
+/>
+<small class="form-text error" *ngIf="f[elem.id].touched && f[elem.id].errors" >
+  <small *ngIf="f[elem.id].errors.required">{{elem.placeHolder}} is required</small>
+  <small *ngIf="elem.id == 'email' && f[elem.id].errors?.pattern">Enter valid{{elem.placeHolder}}</small>
+</small>
+</div>

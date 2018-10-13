@@ -1,0 +1,26 @@
+@import '../../@theme/styles/themes';
+
+@include nb-install-component() {
+  .home-container {
+    margin:auto;
+  }
+  div[class^=col-] {
+    padding: 0.5rem;
+    box-sizing: border-box;
+
+
+    div {
+      text-align: center;
+      background-color: nb-theme(color-bg-active);
+      padding: 0.75rem 0.25rem;
+      border-radius: 0.25rem;
+      margin: 0.5rem;
+    }
+    i {
+      font-size: 6rem;
+    }
+    .name {
+      font-size: 1.5rem;
+    }
+  }
+}

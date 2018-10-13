@@ -1,0 +1,9 @@
+<div>
+  <div>
+    <h1>{{module}} <a routerLink="{{create}}"><span style="float: right;" class="fa fa-plus"></span></a></h1>
+  </div>
+  <ngx-table [rows]="rows"
+             [columns]="columns"
+             [click]="click.bind(this)">
+  </ngx-table>
+</div>

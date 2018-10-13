@@ -1,0 +1,15 @@
+<table class="table">
+  <tr>
+    <th *ngFor="let col of columns">
+      {{col.label}}
+    </th>
+  </tr>
+  <tr *ngFor="let row of rows">
+    <td [ngSwitch]="col.type" *ngFor="let col of columns">
+      <ngx-table-status *ngSwitchCase="'checkbox'" [data]="row[col.accessor]"> </ngx-table-status>
+      <ngx-table-text *ngSwitchCase="'select'" [data]="row[col.accessor][col.listAcc]"> </ngx-table-text>
+      <ngx-table-operations *ngSwitchCase="'operation'" [data]="row[col.accessor]" [operations]="col.operation" [click]="click.bind(this)"> </ngx-table-operations>
+      <ngx-table-text *ngSwitchDefault [data]="row[col.accessor]"> </ngx-table-text>
+    </td>
+  </tr>
+</table>

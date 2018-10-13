@@ -1,0 +1,9 @@
+<div>
+  <div>
+    <h1>Users <a routerLink="../user/form/0"><span style="float: right;" class="fa fa-plus"></span></a></h1>
+  </div>
+  <ngx-table [rows]="rows"
+             [columns]="columns"
+             [click]="click.bind(this)">
+  </ngx-table>
+</div>

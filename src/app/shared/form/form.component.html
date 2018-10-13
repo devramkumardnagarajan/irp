@@ -1,0 +1,15 @@
+<form [formGroup]="myform" (ngSubmit)="submit()">
+      <div [ngSwitch]="elem.type" class="form-group" *ngFor="let elem of formObj">
+          <ngx-checkbox  *ngSwitchCase="'checkbox'" [myform]="myform" [elem]="elem" [f]="f" [change]="change.bind(this)" ></ngx-checkbox>
+          <ngx-select *ngSwitchCase="'select'" [myform]="myform" [elem]="elem" [f]="f" > </ngx-select>
+          <ngx-textbox *ngSwitchDefault [myform]="myform" [elem]="elem" [f]="f" > </ngx-textbox>
+      </div>
+    <div class="form-group">
+      <button
+        [disabled]="submitted || !myform.valid"
+        class="btn btn-block btn-hero-success"
+        [class.btn-pulse]="submitted" >
+        {{submitText}}
+      </button>
+    </div>
+  </form>

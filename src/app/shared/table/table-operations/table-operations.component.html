@@ -1,0 +1,4 @@
+<span [ngSwitch]="op" *ngFor="let op of operations">
+  <ngx-edit *ngSwitchCase="'edit'" [data]="data" [click]="click" [operation]="op"> </ngx-edit>
+  <ngx-delete *ngSwitchCase="'delete'" [data]="data" [click]="click" [operation]="op"> </ngx-delete>
+</span>

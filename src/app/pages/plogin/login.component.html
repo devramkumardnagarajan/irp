@@ -1,0 +1,17 @@
+<div>
+  <h2 class="title">Sign In</h2>
+  <ngx-form
+    [myform]="form"
+    [formObj]="formObj"
+    [change]="onChange.bind(this)"
+    [submitted]="submitted"
+    [submit]="onSubmit.bind(this)"
+    [submitText]="title"
+  >
+  </ngx-form>
+  <div class="links">
+    <small class="form-text">
+      Don't have an account? <a routerLink="../signup"><strong>Sign Up</strong></a>
+    </small>
+  </div>
+</div>

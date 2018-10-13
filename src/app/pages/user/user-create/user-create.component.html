@@ -1,0 +1,20 @@
+<div>
+  <div>
+    <h2 class="title">Create User </h2>
+  </div>
+
+  <ngx-form
+    [myform]="form"
+    [formObj]="formObj"
+    [change]="onChange.bind(this)"
+    [submitted]="submitted"
+    [submit]="onSubmit.bind(this)"
+    [submitText]="title"
+  >
+  </ngx-form>
+  <div class="links">
+    <small class="form-text">
+      <a (click)="goBack()"><strong>Back</strong></a>
+    </small>
+  </div>
+</div>
